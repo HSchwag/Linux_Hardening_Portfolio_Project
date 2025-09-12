@@ -3,6 +3,8 @@
 # all that something went wrong and it is necessary to do a full reset to
 # basline
 
+set -Eeuo pipefail
+
 # Quick reference/creates the directory if not already made
 BACKUP_DIR="/home/sysadmin/Backups"
 
