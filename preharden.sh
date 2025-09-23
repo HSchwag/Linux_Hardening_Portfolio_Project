@@ -10,37 +10,36 @@ set -Eeuo pipefail
 
 # Defining a variable for the output file then making sure if it exists that
 # it is a blank document.
-PRE_HARDEN_REPORT="pre_harden_report.txt"
-echo "" > "$PRE_HARDEN_REPORT"
-LINE_BREAK=""
+REPORT="report_$(date).txt"
+echo "" > "$REPORT"
 
 # This is just to mark the time and date of when the information was gathered
-echo "======= System Summary Report =======" >> "$PRE_HARDEN_REPORT"
-echo "Report Date: $(date)" >> "$PRE_HARDEN_REPORT"
-echo "$LINE_BREAK" >> "$PRE_HARDEN_REPORT"
+echo "======= System Summary Report =======" | tee -a "$REPORT"
+echo "Report Date: $(date)" >> "$REPORT"
+echo "" | tee -a "$REPORT"
 
 # Command to return the hostname.
-echo "------- Hostname -------" >> "$PRE_HARDEN_REPORT"
-hostname >> "$PRE_HARDEN_REPORT"
-echo "$LINE_BREAK" >> "$PRE_HARDEN_REPORT"
+echo "------- Hostname -------" | tee -a "$REPORT"
+echo "$(hostname)" | tee -a "$REPORT"
+echo "" | tee -a "$REPORT"
 
 # OS Version, this will check if the command lsb_release is available
 # on the PATH. If it isn't it will instead cat /etc/os-release for the
 # same information in a different format.
-echo "------- OS Version -------" >> "$PRE_HARDEN_REPORT"
+echo "------- OS Version -------" | tee -a "$REPORT"
 if command -v lsb_release &> /dev/null; then
-	lsb_release -a >> "$PRE_HARDEN_REPORT" 2>/dev/null
+	echo "`lsb_release -a`" | tee -a "$REPORT" 2>/dev/null
 else
-	cat /etc/os-release >> "$PRE_HARDEN_REPORT"
+	echo "`cat /etc/os-release`" | tee -a "$REPORT"
 fi
-echo "$LINE_BREAK" >> "$PRE_HARDEN_REPORT"
+echo "" | tee -a "$REPORT"
 
 # Memory Information
-echo "------- Memory Information -------" >> "$PRE_HARDEN_REPORT"
-free -h >> "$PRE_HARDEN_REPORT"
-echo "$LINE_BREAK" >> "$PRE_HARDEN_REPORT"
+echo "------- Memory Information -------" | tee -a "$REPORT"
+echo "`free -h`" | tee -a "$REPORT"
+echo "" | tee -a "$REPORT"
 
 # Uptime
-echo "------- Uptime -------" >> "$PRE_HARDEN_REPORT"
-uptime -p >> "$PRE_HARDEN_REPORT"
-echo "$LINE_BREAK" >> "$PRE_HARDEN_REPORT"
+echo "------- Uptime -------" | tee -a "$REPORT"
+echo "`uptime -p`" | tee -a "$REPORT"
+echo "" | tee -a "$REPORT"
