@@ -10,7 +10,7 @@ set -Eeuo pipefail
 
 # Defining a variable for the output file then making sure if it exists that
 # it is a blank document.
-REPORT="report_$(date).txt"
+REPORT="report_$(date +%B-%d).txt"
 echo "" > "$REPORT"
 
 # This is just to mark the time and date of when the information was gathered
@@ -42,4 +42,6 @@ echo "" | tee -a "$REPORT"
 # Uptime
 echo "------- Uptime -------" | tee -a "$REPORT"
 echo "`uptime -p`" | tee -a "$REPORT"
+echo "" | tee -a "$REPORT"
+echo "======= Backup Status =======" | tee -a "$REPORT"
 echo "" | tee -a "$REPORT"

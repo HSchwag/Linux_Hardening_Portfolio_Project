@@ -6,14 +6,15 @@
 set -Eeuo pipefail
 
 # Quick reference/creates the directory if not already made
+REPORT="report_$(date +%B-%d).txt"
 BACKUP_DIR="/home/sysadmin/Backups/"
 DAILY_BACKUP="/home/sysadmin/Backups/full_system_backup_$(date +%A).tar.gz"
 
 if [ -d "$BACKUP_DIR" ]; then
-	echo "[*]Backup directory present."
+	echo "[*]Backup directory present." | tee -a "$REPORT"
 else
 	mkdir "$BACKUP_DIR"
-	echo "[+]Backup directory not present in sysadmin home... directory created."
+	echo "[+]Backup directory not present in sysadmin home... directory created." | tee -a "$REPORT"
 fi
 
 # This is a full system backup of everything excluding the backup directory
@@ -26,9 +27,9 @@ sudo tar -cvpzf "$DAILY_BACKUP" --exclude=/home/sysadmin/Backups/* --exclude=/pr
 # currently. Since it should be daily with a seperate weekly that is only removed weekly
 for backup in "$BACKUP_DIR"*.tar.gz; do
 	if [ "$backup" != "$DAILY_BACKUP" ]; then
-		echo "[-]Old backup $backup removed!"
+		echo "[-]Old backup $backup removed!" | tee -a "$REPORT"
 		rm -f -- "$backup"
 	else
-		echo "[+]Backup created successfully!"
+		echo "[+]Backup created successfully!" | tee -a "$REPORT"
 	fi
 done
