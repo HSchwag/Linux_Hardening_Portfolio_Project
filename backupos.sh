@@ -10,6 +10,10 @@ REPORT="report_$(date +%B-%d).txt"
 BACKUP_DIR="/home/sysadmin/Backups/"
 DAILY_BACKUP="/home/sysadmin/Backups/full_system_backup_$(date +%A).tar.gz"
 
+echo "" | tee -a "$REPORT"
+echo "======= Backup Status =======" | tee -a "$REPORT"
+echo "" | tee -a "$REPORT"
+
 if [ -d "$BACKUP_DIR" ]; then
 	echo "[*]Backup directory present." | tee -a "$REPORT"
 else

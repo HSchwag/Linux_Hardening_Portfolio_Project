@@ -42,6 +42,3 @@ echo "" | tee -a "$REPORT"
 # Uptime
 echo "------- Uptime -------" | tee -a "$REPORT"
 echo "`uptime -p`" | tee -a "$REPORT"
-echo "" | tee -a "$REPORT"
-echo "======= Backup Status =======" | tee -a "$REPORT"
-echo "" | tee -a "$REPORT"
