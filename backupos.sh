@@ -29,6 +29,6 @@ for backup in "$BACKUP_DIR"*.tar.gz; do
 		rm -f -- "$backup"
 		echo "[-]Old backup $(backup) removed!"
 	else
-		echo "[*]Backup created successfully!"
+		echo "[+]Backup created successfully!"
 	fi
 done
