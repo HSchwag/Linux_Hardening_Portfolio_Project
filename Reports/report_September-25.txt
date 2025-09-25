@@ -1,0 +1,66 @@
+
+
+======= Backup Status =======
+
+[*]Backup directory present.
+[+]Backup created successfully!
+
+======= System Summary Report =======
+Report Date: Thu Sep 25 04:30:44 AM UTC 2025
+
+------- Hostname -------
+HardenedLinuxSystem
+
+------- OS Version -------
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.1 LTS
+Release:	24.04
+Codename:	noble
+
+------- Memory Information -------
+               total        used        free      shared  buff/cache   available
+Mem:           9.7Gi       2.7Gi       205Mi       112Mi       7.2Gi       7.0Gi
+Swap:             0B          0B          0B
+
+------- Uptime -------
+up 3 hours, 7 minutes
+
+======= User and Group Audit Report =======
+
+sysadmin: sysadmin adm cdrom sudo dip plugdev users lpadmin
+sysadmin P 2025-09-11 0 99999 7 -1
+
+arodgers: arodgers Marketing
+arodgers L 2025-09-12 0 99999 7 -1
+
+msmith: msmith Finance
+msmith P 2025-09-12 0 99999 7 -1
+
+gperry: gperry IT
+gperry P 2025-09-12 0 99999 7 -1
+
+twhite: twhite Marketing
+twhite P 2025-09-12 0 99999 7 -1
+
+jcaesar: jcaesar IT HR
+jcaesar L 2025-09-12 0 99999 7 -1
+
+
+======= Sudo Privileges =======
+
+User sysadmin may run the following commands on HardenedLinuxSystem:
+    (ALL : ALL) ALL
+User arodgers may run the following commands on HardenedLinuxSystem:
+    (ALL : ALL) /home/ardogers
+User msmith is not allowed to run sudo on HardenedLinuxSystem.
+User gperry is not allowed to run sudo on HardenedLinuxSystem.
+User twhite is not allowed to run sudo on HardenedLinuxSystem.
+User jcaesar is not allowed to run sudo on HardenedLinuxSystem.
+
+======= Password Policy Status =======
+
+/tmp/pam_copy already exists.
+Copied file successfully changed in place using sed. Verify changes before altering original file.
+
+======= File Permissions =======
+
