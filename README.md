@@ -20,12 +20,21 @@ This project shows I can automate real system tasks. It started from my Linux ha
 ## Repo layout
 
 Linux_Python_and_Bash_Automation/
+
 ├── automationpilot.py # Orchestrator: runs Scripts/ in order and prints status
+
 ├── Reports/ # Generated reports (e.g., report_September-26.txt)
+
 └── Scripts/
+
   ├── backupos.sh
+
   ├── preharden.sh
+
   ├── auditusers.sh
+
   ├── sudoprivilegedusers.sh
+
   ├── passwordpolicy.sh
+
   └── filepermissionscheck.sh
