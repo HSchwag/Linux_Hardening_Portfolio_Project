@@ -23,9 +23,9 @@ Linux_Python_and_Bash_Automation/
 ├── automationpilot.py # Orchestrator: runs Scripts/ in order and prints status
 ├── Reports/ # Generated reports (e.g., report_September-26.txt)
 └── Scripts/
-  ├── backupos.sh — Creates a daily system backup tarball (rotates old backups, skips temp/cache dirs).
-  ├── preharden.sh — Collects basic system info (hostname, OS version, memory, uptime) for the report.
-  ├── auditusers.sh — Audits human users: lists groups, password/lock status, and adds to the report.
-  ├── sudoprivilegedusers.sh — Checks sudoers and lists which users have elevated privileges.
-  ├── passwordpolicy.sh — Copies and safely edits PAM common-password to enforce stronger password policy.
-  └── filepermissionscheck.sh — Normalizes file/dir permissions (dirs 755, files 644), flags deviations.
+  ├── backupos.sh
+  ├── preharden.sh
+  ├── auditusers.sh
+  ├── sudoprivilegedusers.sh
+  ├── passwordpolicy.sh
+  └── filepermissionscheck.sh
