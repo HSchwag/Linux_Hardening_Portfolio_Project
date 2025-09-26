@@ -26,7 +26,7 @@ class LinuxAutomationManager:
     def __init__(self):
         pass
 
-      def run_all_scripts(self):
+    def run_all_scripts(self):
 
 # This is just for my sake so I can make sure all the scripts run and if I want to add more later or maybe exclude one later
 # on it's easier to quickly verify without scrolling through a giant output. 
@@ -51,12 +51,8 @@ class LinuxAutomationManager:
             result = subprocess.run(["bash", str(script_path)])
 
 # This is so that in the console I have an extra set of outputs I know is coming from this python program directly.
-# Makes it way easier to debug and tell what went wrong. The script filepermissionscheck.sh always returns an error code 1.
-# This is due to lastcrawl.txt which is refreshed each run with audit results. 
-# For this reason I just have it tell me it ran it successfully since this one I can visually verify if it ran or not.
+# Makes it way easier to debug and tell what went wrong.
             if result.returncode == 0:
-                print(f"\n[Linux Automation Manager] {script} completed successfully!")
-            elif script == "filepermissionscheck.sh":
                 print(f"\n[Linux Automation Manager] {script} completed successfully!")
             else:
                 print(f"\n[Linux Automation Manager] {script} failed with exit code {result.returncode}")

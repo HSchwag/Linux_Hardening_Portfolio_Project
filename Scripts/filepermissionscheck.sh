@@ -6,22 +6,24 @@
 # catches any unset variables I missed, and catches errors in any pipelines.
 set -Eeuo pipefail
 
-# This sets the report variable and is uniform across all scripts.
+# This sets the report variable and is uniform across all scripts. I also realized that lastcrawl was giving me lots of pain so I just excluded the entire cache directory for the
+# purpose of demonstrating automation.
 REPORT="/home/sysadmin/Linux_Python_and_Bash_Automation/Reports/report_$(date +%B-%d).txt"
+CACHE="*/.cache"
 
 # Header
 echo "" | tee -a "$REPORT"
 echo "======= File Permissions =======" | tee -a "$REPORT"
 echo "" | tee -a "$REPORT"
 
-# The actual bash to find /home and find either directories or files and then updates their permissions.
-sudo find /home -type d -exec chmod 755 {} +
-sudo find /home -type f -exec chmod 644 {} +
-sudo find /home -type f -iname "*.sh" -exec chmod 755 {} +
+# The actual bash to find /home and find either directories or files and then updates their permissions. It also specifies any .cache directory in /home/ and skips it.
+sudo find /home -path "$CACHE" -prune -o -type d -exec chmod 755 {} +
+sudo find /home -path "$CACHE" -prune -o -type f -exec chmod 644 {} +
+sudo find /home -path "$CACHE" -prune -o -type f -iname "*.sh" -exec chmod 755 {} +
 
 # This is what then looks through and finds any directories or files that are not the specified permissions.
-sudo find /home -xdev -type f ! -perm 644 -printf 'CHECK PERMISSIONS %m %u:%g %p\n' | tee -a "$REPORT"
-sudo find /home -xdev -type d ! -perm 755 -printf 'CHECK PERMISSIONS %m %u:%g %p\n' | tee -a "$REPORT"
+sudo find /home -path "$CACHE" -prune -o -type f ! -perm 644 -printf 'CHECK PERMISSIONS %m %u:%g %p\n' | tee -a "$REPORT"
+sudo find /home -path "$CACHE" -prune -o -type d ! -perm 755 -printf 'CHECK PERMISSIONS %m %u:%g %p\n' | tee -a "$REPORT"
 
-# Lastly just for ease it then goes through and updates the python program to executable for ease.
-sudo find /home/sysadmin -type f "Linux_Python_and_Bash_Automation/automationpilot.py" -exec chmod 755 {} +
+# Lastly just for ease it then goes through and updates the python program to executable.
+sudo chmod 755 /home/sysadmin/Linux_Python_and_Bash_Automation/automationpilot.py
