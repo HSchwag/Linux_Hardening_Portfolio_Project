@@ -4,7 +4,7 @@
 # catches any unset variables I missed, and catches errors in any pipelines.
 set -Eeuo pipefail
 
-# This sets the report variable and is uniform across all scripts. 
+# This sets the report variable and is uniform across all scripts.
 REPORT="/home/sysadmin/Linux_Python_and_Bash_Automation/Reports/report_$(date +%B-%d).txt"
 
 # This just adds the header with blank space for formatting but also includes the date of the report.

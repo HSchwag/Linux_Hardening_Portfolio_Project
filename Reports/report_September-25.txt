@@ -6,7 +6,7 @@
 [+]Backup created successfully!
 
 ======= System Summary Report =======
-Report Date: Thu Sep 25 04:30:44 AM UTC 2025
+Report Date: Thu Sep 25 11:50:03 PM UTC 2025
 
 ------- Hostname -------
 HardenedLinuxSystem
@@ -19,11 +19,11 @@ Codename:	noble
 
 ------- Memory Information -------
                total        used        free      shared  buff/cache   available
-Mem:           9.7Gi       2.7Gi       205Mi       112Mi       7.2Gi       7.0Gi
+Mem:           9.7Gi       1.2Gi       151Mi        43Mi       8.7Gi       8.5Gi
 Swap:             0B          0B          0B
 
 ------- Uptime -------
-up 3 hours, 7 minutes
+up 10 minutes
 
 ======= User and Group Audit Report =======
 
@@ -59,8 +59,23 @@ User jcaesar is not allowed to run sudo on HardenedLinuxSystem.
 
 ======= Password Policy Status =======
 
-/tmp/pam_copy already exists.
+/tmp/pam_copy not found. Directory created.
 Copied file successfully changed in place using sed. Verify changes before altering original file.
 
 ======= File Permissions =======
 
+CHECK PERMISSIONS 664 sysadmin:sysadmin /home/sysadmin/.cache/tracker3/files/last-crawl.txt
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/.local/share/Trash/files/auditusers.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/.local/share/Trash/files/filepermissionscheck.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/.local/share/Trash/files/sudoprivilegedusers.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/.local/share/Trash/files/preharden.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/.local/share/Trash/files/backupos.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/.local/share/Trash/files/passwordpolicy.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/pydevd_attach_to_process/linux_and_mac/compile_linux.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/.vscode/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/pydevd_attach_to_process/linux_and_mac/compile_mac.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/Linux_Python_and_Bash_Automation/Scripts/auditusers.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/Linux_Python_and_Bash_Automation/Scripts/filepermissionscheck.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/Linux_Python_and_Bash_Automation/Scripts/sudoprivilegedusers.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/Linux_Python_and_Bash_Automation/Scripts/preharden.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/Linux_Python_and_Bash_Automation/Scripts/backupos.sh
+CHECK PERMISSIONS 755 sysadmin:sysadmin /home/sysadmin/Linux_Python_and_Bash_Automation/Scripts/passwordpolicy.sh

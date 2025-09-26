@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-# This will go through the users and groups on the system and give a report about which users have what privileges
-# by looking at the groups they are apart of and also check to see if their account is locked or not.
+# This will go through the users and groups on the system and give a report about which users have passwords,
+# or are currently locked. It also will give me a snapshot of what groups they're apart of.
 
+# I use # I use set -Eeuo pipefail to make sure that the script runs smoothly and s>
+# catches any unset variables I missed, and catches errors in any pipelines.
 set -Eeuo pipefail
 
-# Just the text file that will be populated with the report.
+# Just the text file that will be populated with the report.# This sets the report variable and is uniform across all scripts.
 REPORT="/home/sysadmin/Linux_Python_and_Bash_Automation/Reports/report_$(date +%B-%d).txt"
 
 # Header
